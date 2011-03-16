@@ -1,0 +1,30 @@
+Videofurnace integration module for Moodle.
+Author: Eric Remy, edremy@gmail.com
+Date: Mar 2011
+
+Thie module searches for tagged files within a Haivision Videofurnace streaming video system and returns a list of all videos tagged
+with the course shortname in the AFID field of the Videofurnace metadata for that video
+
+Clicking on a video name generates a launch applet that allows the user to watch the video.
+
+Setup:
+
+0) Tag videos within Videofurnace by opening up the asset in VF editor, and enter a comma-seperated list of course shortnames into
+the AFID metadata field
+1) Unzip the module into the mods directory, run Site Administration->Notifications
+2) Site Administration->Modules->Activities->Videofurnace->Settings
+3) Set the server name to the main URL of your Videofurnace server
+4) Select if you want conditional access or not.  The setting here *must* match the setting your Videofurnace server.  Setting
+conditional access here requires Conditional Access Method in VF to be set to XMLRPC API, otherwise set to NONE.
+5) Enter any desired text for copyright warnings
+6) Enter the current semester and year.  If these are set, the system will look for a string at the end of every shortname that looks like
+_SEMESTERYEAR, ex ENG_201_A_SPRING2011.  Courses that do not match the current semester will not show any videos.  This is designed as a way for 
+admins to quickly expire an entire semester's worth of videos.
+
+
+Known Issues
+--------------------
+
+This module will only work with versions of Videofurnace prior to 6.0.  
+
+
